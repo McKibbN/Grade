@@ -1,0 +1,64 @@
+<!DOCHTML>
+<html>
+  <head>
+    <title>Grade JS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+  </head>
+  <style>
+    body {
+      width: 100%auto;
+      height: 100%auto;
+      background-color: #c0a0dd;
+    }
+
+    .box {
+      margin-top: 50px;
+    }
+
+    h3 {
+      font-family: Arial;
+      font-size: 40px:
+      width: 50%auto;
+    }
+
+    #paper {
+      width: 200px;
+      margin-top: 30px;
+    }
+  </style>
+
+  <body>
+    <center>
+      <div class="box">
+        <h3>How well did you do this semester?<h3>
+        <input type="number" class="grade" min="0" max="100">
+          <button class="btn" onclick="grade()">Submit</button><br>
+          <img id="paper" src="images\blank.png"\>
+      </div>
+    </center>
+  </body>
+  <script>
+    function grade() {
+      let x = $(".grade").val();
+      if (x > 100 || x < 0) {
+        alert("Try Again!");
+      }
+      if (x >= 90){
+        document.getElementById("paper").src="images/a.png";
+      }
+      if (x >= 80 && x <= 89){
+        document.getElementById("paper").src="images/b.png";
+      }
+      if (x >= 70 && x <= 79){
+        document.getElementById("paper").src="images/c.png";
+      }
+      if (x >= 64 && x <= 69){
+        document.getElementById("paper").src="images/d.png";
+      }
+      if (x >= 0 && x <= 64){
+        document.getElementById("paper").src="images/f.png";
+      }
+    }
+  </script>
+
+</html>
